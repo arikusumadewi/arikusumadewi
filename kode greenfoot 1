@@ -1,0 +1,12 @@
+"my world"
+Pig pig = new Pig();
+        addObject(pig,54,204);
+        
+        Pig pig1 = new Pig();
+        addObject(pig1,54,204);
+        
+ "actor"
+ move(3);
+        
+        if (getX()==599)
+            setLocation(0,getY());
