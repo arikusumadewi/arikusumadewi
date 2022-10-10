@@ -1,0 +1,13 @@
+{
+        // Add your action code here.
+        
+        if (Greenfoot.isKeyDown("W"))
+            setLocation(getX(), getY()-3);
+        if (Greenfoot.isKeyDown("S"))
+            setLocation(getX(), getY()+3);
+        
+        if (Greenfoot.isKeyDown("A"))  
+            setLocation(getX()-3, getY());
+        if (Greenfoot.isKeyDown("D"))
+            setLocation(getX()+3, getY());
+    }
