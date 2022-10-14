@@ -1,0 +1,116 @@
+(kode myworld)
+private void prepare()
+    {
+        Hero hero = new Hero();
+        addObject(hero,76,205);
+    }
+    
+    public void act(){
+        spawnKumbang();
+    }
+    
+    public int timerKumbang =  0;
+    public void spawnKumbang(){
+        if (timerKumbang==180) {//jika timer=3 detik
+            //Enemy enemy = new Enemy();
+            addObject(new Kumbang(), 599, Greenfoot.getRandomNumber(400));
+            timerKumbang = 0;
+        }else{
+            timerKumbang++;
+        }
+    }
+    
+    (kode hero)
+     public void act()
+    {
+        moveHero();
+        shootLaser();
+    }
+    
+    public void moveHero()
+    {
+        if (Greenfoot.isKeyDown("W"))
+            setLocation(getX(), getY()-3);
+        if (Greenfoot.isKeyDown("S"))
+            setLocation(getX(), getY()+3);
+        
+        if (Greenfoot.isKeyDown("A"))  
+            setLocation(getX()-3, getY());
+        if (Greenfoot.isKeyDown("D"))
+            setLocation(getX()+3, getY()+3);
+            
+    }
+    
+    int laserTimer = 0;
+    public void shootLaser(){
+        if (laserTimer == 30){
+            getWorld().addObject(
+                new Laser(),
+                getX() + 5,
+                getY()
+            );
+            
+            laserTimer =  0;
+        }else{
+            laserTimer++;
+        }
+    }
+    
+   (kode kumbang)
+   public Kumbang(){
+        setRotation(180);
+    }
+    public Kumbang(int speed){
+        setRotation(180);
+        this.speed = speed;
+    }
+    
+    public int speed = 1;
+    public void act()
+    {
+        move(speed);
+
+        World w = getWorld();
+        if(isAtEdge())
+        {
+            setLocation(590,getY());
+        }
+    }
+    
+    (kode boom)
+    public void act()
+    {
+        turn(2);
+        boom();
+    }
+    
+    int boomTimer = 0;
+    public void boom(){
+        if (boomTimer==60){
+            getWorld().removeObject(this);
+        }else{
+            boomTimer++;
+        }
+    }
+    
+    (kode laser)
+    public void act()
+    {
+        move(8);
+        laserCollision();
+    }
+    
+    public void laserCollision(){
+        if (isTouching(Kumbang.class)){
+            
+            getWorld().addObject(
+                new Boom(),
+                getX(),
+                getY()
+            );
+            
+            removeTouching(Kumbang.class);
+            getWorld().removeObject(this);
+        }else if (isAtEdge())
+            getWorld().removeObject(this);
+    }
