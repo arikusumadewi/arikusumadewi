@@ -46,9 +46,9 @@ public class Hero extends Actor
             laserTimer++;
         }
     }
-    public void enemyCollision(){
-          if (isTouching(Enemy.class)){
-            removeTouching(Enemy.class);
+    public void kumbangCollision(){
+          if (isTouching(Kumbang.class)){
+            removeTouching(Kumbang.class);
             getWorld().removeObject(this);
             
         }else if (isAtEdge())
