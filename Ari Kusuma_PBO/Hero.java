@@ -46,21 +46,12 @@ public class Hero extends Actor
             laserTimer++;
         }
     }
-    public void detectKumbangCollision()
-    {
-        if (isTouching(Kumbang.class)) 
-        {
-            kumbangCollision();
-            setLocation(100,200);
+    public void enemyCollision(){
+          if (isTouching(Enemy.class)){
+            removeTouching(Enemy.class);
+            getWorld().removeObject(this);
+            
+        }else if (isAtEdge())
+            getWorld().removeObject(this);
         }
-    }
-    public void kumbangCollision(){
-        if (isTouching(Kumbang.class)){
-            getWorld().addObject(
-            new Boom(),
-            getX(),
-            getY()
-            );
-        }
-    }
 }
