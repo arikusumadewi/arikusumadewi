@@ -33,4 +33,9 @@ public class Kumbang extends Actor
             setLocation(590,getY());
         }
     }
+    public void hilang ()
+    {
+        if (isAtEdge())
+            getWorld().removeObject(this);
+    }
 }
