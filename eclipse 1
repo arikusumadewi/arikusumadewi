@@ -1,0 +1,221 @@
+package id.ac.undiksha.siak;
+
+import id.ac.undiksha.siak.entitis.mahasiswa;
+
+public class ilkom {
+
+	public static void main(String[] args) {
+		mahasiswa mhs1 = new mahasiswa();
+		mhs1.setNama("ari");
+		mhs1.setNim("2115101010");
+		mhs1.setAlamat("Klungkung");
+		mhs1.setJeniskelamin(true);
+		mhs1.setProdi("Ilmu Komputer");
+		mhs1.setJurusan("Teknik Informatika");
+		mhs1.setFakultas("Teknik dan Kejuruan");
+		//System.out.println();
+		
+}
+}
+
+
+package id.ac.undiksha.siak.entitis;
+
+public class mahasiswa {
+
+	private boolean jeniskelamin; //0 perempuan, 1 laki-laki
+	private String nim; 
+	private String prodi; 
+	private String jurusan; 
+	private String fakultas; 
+	
+	public mahasiswa() {
+		this.setNim("(nama belum diisi)");
+		this.setProdi("(nama belum diisi)");
+		this.setJurusan("(nama belum diisi)");
+		this.setFakultas("(nama belum diisi)");
+	}
+	
+	public mahasiswa(String nama, String alamat, boolean jeniskelamin, String nim, String prodi, String jurusan,
+			String fakultas) {
+		super();
+		this.jeniskelamin = jeniskelamin;
+		this.nim = nim;
+		this.prodi = prodi;
+		this.jurusan = jurusan;
+		this.fakultas = fakultas;
+	}
+
+
+	public void printAllInfo(){
+		System.out.println("Nama: "		+ this.getNama());
+		System.out.println("Alamat: "		+ this.getAlamat());
+		System.out.println("Nim: "		+ this.getNim());
+		System.out.println("Prodi: "		+ this.getProdi());
+		System.out.println("Jurusan: "		+ this.getJurusan());
+		System.out.println("Fakultas: "		+ this.getFakultas());
+	
+		//System.out.println("Jenis Kelamin: " + (jenisKelamin ? "laki-laki":"Perempuan"));
+	}
+	
+
+	public boolean getJeniskelamin() {
+		return jeniskelamin;
+	}
+
+	public void setJeniskelamin(boolean jeniskelamin) {
+		this.jeniskelamin = jeniskelamin;
+	}
+
+	public String getNim() {
+		return nim;
+	}
+
+	public void setNim(String nim) {
+		this.nim = nim;
+	}
+
+	public String getProdi() {
+		return prodi;
+	}
+
+	public void setProdi(String prodi) {
+		this.prodi = prodi;
+	}
+
+	public String getJurusan() {
+		return jurusan;
+	}
+
+	public void setJurusan(String jurusan) {
+		this.jurusan = jurusan;
+	}
+
+	public String getFakultas() {
+		return fakultas;
+	}
+
+	public void setFakultas(String fakultas) {
+		this.fakultas = fakultas;
+	}
+
+	public String getNama() {
+		return nama;
+	}
+
+	public String getname() {
+		return this.nama;
+}
+	
+	
+}
+
+
+package id.ac.undiksha.siak.entitis;
+
+public class Dosen {
+
+	private String nip;
+	private String prodi;
+	private String jurusan; 
+	private String fakultas; 
+	private String jabatan;
+
+	public Dosen() {
+		this.setNip("(Nip belum diisi)");
+		this.setProdi("(prodi belum diisi)");
+		this.setJurusan("(jurusan belum diisi)");
+		this.setFakultas("(fakultas belum diisi)");
+		this.setJabatan("(jabatan belum diisi)");
+	}
+	
+	public Dosen(String nip, String prodi, String jurusan,String fakultas,String jabatan) {
+			super();
+			this.nip = nip;
+			this.prodi = prodi;
+			this.jurusan = jurusan;
+			this.fakultas = fakultas;
+			this.jabatan = jabatan;
+		}
+		
+	public void printAllInfo(){
+		System.out.println("Nip: "		+ this.getNip());
+		System.out.println("Prodi: "		+ this.getProdi());
+		System.out.println("Jurusan: "		+ this.getJurusan());
+		System.out.println("Fakultas: "		+ this.getFakultas());
+		System.out.println("Jabatan: "   + this.getJabatan());
+	}
+	
+	public String getNip() {
+		return nip;
+	}
+	public void setNip(String nip) {
+		this.nip = nip;
+	}
+	public String getProdi() {
+		return prodi;
+	}
+	public void setProdi(String prodi) {
+		this.prodi = prodi;
+	}
+	public String getJurusan() {
+		return jurusan;
+	}
+	public void setJurusan(String jurusan) {
+		this.jurusan = jurusan;
+	}
+	public String getFakultas() {
+		return fakultas;
+	}
+	public void setFakultas(String fakultas) {
+		this.fakultas = fakultas;
+	}
+	public String getJabatan() {
+		return jabatan;
+	}
+	public void setJabatan(String jabatan) {
+		this.jabatan = jabatan;
+	}
+	
+	
+	
+}
+
+
+package id.ac.undiksha.siak.entitis;
+
+public class pegawai {
+
+	private String nip; 
+	private String unit;
+	
+	public pegawai() {
+		this.setNip("(Nip belum diisi)");
+		this.setUnit("(unit belum diisi)");
+	}
+	
+	public pegawai(String nip, String unit) {
+		super();
+		this.nip = nip;
+		this.unit = unit;
+	}
+	public void printAllInfo(){
+		System.out.println("Nip: "		+ this.getNip());
+		System.out.println("Unit: "		+ this.getUnit());
+	}
+	
+	public String getNip() {
+		return nip;
+	}
+	public void setNip(String nip) {
+		this.nip = nip;
+	}
+	public String getUnit() {
+		return unit;
+	}
+	public void setUnit(String unit) {
+		this.unit = unit;
+	} 
+	
+	
+}
